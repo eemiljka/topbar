@@ -1,6 +1,6 @@
-import TopBar from '@/components/TopBar';
-import { useUserContext } from '@/hooks/contextHooks';
-import { Outlet } from 'react-router-dom';
+import TopBar from "../components/TopBar";
+import { useUserContext } from "mediastore/contextHooks";
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   const { user, handleAutoLogin } = useUserContext();

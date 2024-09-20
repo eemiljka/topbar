@@ -5,21 +5,25 @@ import federation from '@originjs/vite-plugin-federation';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     federation({
       name: 'topbar',
-      filename: 'remoteEntry.js',
+      remotes: {
+        mediastore: 'http://localhost:3001/assets/remoteEntry.js',
+        front_and_sidebar: 'http://localhost:3002/assets/remoteEntry.js',
+      },
       exposes: {
-        './Topbar': './src/components/Topbar',
+        './TopBar': './src/components/TopBar',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     })
   ],
   server: {
-    port: 3011, // Set the desired port here
+    port: 3015,
   },
   preview: {
-    port: 3004, // Set the desired port here
+    port: 3015,
   },
   resolve: {
     alias: {

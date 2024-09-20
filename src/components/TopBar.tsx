@@ -8,7 +8,7 @@ import {
   TooltipContent,
 } from "./ui/tooltip";
 import { LuBell, LuSearch, LuUpload, LuUser } from "react-icons/lu";
-import { useUserContext } from "@/hooks/contextHooks";
+import { useUserContext } from "mediastore/contextHooks";
 
 const TopBar = () => {
   const { user } = useUserContext();
